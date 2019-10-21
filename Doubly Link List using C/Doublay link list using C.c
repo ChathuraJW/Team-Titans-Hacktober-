@@ -9,6 +9,28 @@ struct linkListNode{
 };
 typedef struct linkListNode *node;
 
+node head=NULL;
+node start=NULL;
+
+//code for create node
+node createNode(){
+	node newNode;
+	newNode=(node)malloc(sizeof(node));
+	return newNode;
+}
+
+//code for add a node into the list
+addNode(int data){
+	node myNode=createNode();
+	myNode->previous=head;
+	myNode->data=data;
+	myNode->next=NULL;
+	if(head==NULL)
+		start=myNode;
+	else
+		head->next=myNode;
+	head=myNode;
+}
 
 int main(){
 	
